@@ -1,0 +1,25 @@
+A Program to demonstrate how to get record from db by using findByNamedQueryAndNamedParam method:
+Programs:
+* Product.java
+* ProductDAO.java
+* ProductDAOImpl.java
+* ProductDetails.java
+* AppConfig.java
+* Test.java
+Note:
+* The findByNamedQueryAndNamedParam overloaded method used to execute named query with named params and return List object.
+* The findByNamedQueryAndNamedParam(String queryName, String paramName, Object value) method is used to execute a named query, binding one value to a ":" named parameter in the query string.
+* The above method accept three arguments first one is named query name as String, second one is single param name as String and third one is single value as String.
+* The findByNamedQueryAndNamedParam(String queryName, String[] paramNames, Object[] values) method is used to execute a named query, binding a number of values to ":" named parameters in the query string.  
+* The above method accept three arguments first one is named query name as String, second one is multiple param names as String array and third one is multiple values as Object array.
+* The named query is defined in Hibernate mapping file or in Entity class.
+* Defining named query in Entity class by using @NamedQueries and @NamedQuery annotations.
+* Defining named query in Hibernate mapping file by using query tag.
+Output:
+------ Product List By Product Id --------
+Product [productId=2, productCode=P002, productName=Pen, quantity=20, price=10.0]
+------ Product List By Product Name -------
+Product [productId=2, productCode=P002, productName=Pen, quantity=20, price=10.0]
+Product [productId=4, productCode=P004, productName=Pen, quantity=15, price=12.75]
+------ Product List By Product Code And Product Name --------
+Product [productId=4, productCode=P004, productName=Pen, quantity=15, price=12.75]
